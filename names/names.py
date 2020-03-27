@@ -22,10 +22,10 @@ duplicates1 = []  # Return the list of duplicates in this data structure
 duplicates2 = [] # used to ensure that all duplicates are found
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates1.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates1.append(name_1)
 
 # this brings the runtime down to ~1.5 seconds
 # for name_1 in names_1:
@@ -100,12 +100,17 @@ for name in names_1:
     name_tree.insert(name)
 for name in names_2:
     if name_tree.contains(name):
-        duplicates2.append(name)
+        duplicates1.append(name)
+
+
+# Holy shit this is quick. How do they do this so fast
+# duplicates2 = [i for i in set(names_1).intersection(names_2)]
+
 
 
 end_time = time.time()
 print (f"{len(duplicates1)} duplicates:\n\n{', '.join(duplicates1)}\n\n")
-print (f"{len(duplicates2)} duplicates:\n\n{', '.join(duplicates2)}\n\n")
+# print (f"{len(duplicates2)} duplicates:\n\n{', '.join(duplicates2)}\n\n") # used to ensure all duplicates are found
 print (f"runtime: {end_time - start_time} seconds")
 
 # ---------- Stretch Goal -----------
